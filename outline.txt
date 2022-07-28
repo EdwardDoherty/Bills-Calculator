@@ -1,0 +1,9 @@
+billDatabase.py will initialize an object from a Bills() class for each bill.
+
+paycheckDatabase.py will keep track of previous paychecks and expected future paychecks. Maybe we can do some cool projections and stuff with this later but for now its just a bunch of objects
+
+cashFlowBalancer.py will contain a single function that balances cash flow based on due dates and projected income
+
+interface.py will take input from the user
+
+functions.py will contain the functions to be called by the user
