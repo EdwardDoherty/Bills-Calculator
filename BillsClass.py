@@ -18,6 +18,8 @@ class Bill:
         self.gracePeriod = gracePeriod
         self.interestRate = interestRate
         self.notes = notes
+
+        #APPEND THE BILLS TO A BILL DICTIONARY using the name as the key and the object as the value
     
     def __repr__(self) -> str:
         msg = """

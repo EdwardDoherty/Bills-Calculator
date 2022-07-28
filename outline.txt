@@ -8,5 +8,6 @@ interface.py will take input from the user and show the bills
 functions.py will contain the functions to be called by the user
 
 paycheckDatabase.py will keep track of previous Paycheck()s and expected future Paycheck()s
+    COMPLETE
 
-cashFlowBalancer.py will contain a single function that balances cash flow based on due dates and projected income
+cashFlowBalancer.py will contain a single function that balances cash flow based on due dates and projected income for a given time frame

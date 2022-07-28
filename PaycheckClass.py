@@ -25,6 +25,8 @@ class PayCheck:
         else: 
             self.who = "Elizabeth"
 
+        #APPEND THE PAYCHECK TO A DICTIONARY, using DATE as the key and the object as the value!!!!
+
     def __repr__(self):
         msg="""
         {who}'s check. ${amount}, {date}, {hours} hours, ${wage}/hr, {gross} gross pay. Notes:"{notes}"

@@ -21,3 +21,4 @@ joeCheck1 = PayCheck(True, 614.87, date(2022,7,28), 12+31.50+1, 17, 756.50, "Fir
 print(joeCheck1)
 print(joeDefaultCheck)
 print(ElizDefaultCheck)
+
