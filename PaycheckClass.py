@@ -7,15 +7,18 @@
 # Your hourly wage at this time
 # Gross pay, before taxes and deductions
 
+
+
 class PayCheck:
 
-    def __init__(self, isJoes, amount, date, hours, wage, gross):
+    def __init__(self, isJoes, amount, date=None, hours=None, wage=None, gross=None, notes=None):
         self.isJoes = isJoes
         self.amount = amount
         self.date = date
         self.hours = hours
         self.wage = wage
         self.gross = gross
+        self.notes = notes
         
         if(isJoes):
             self.who = "Joe"
@@ -24,7 +27,7 @@ class PayCheck:
 
     def __repr__(self):
         msg="""
-        {who}'s check. ${amount}, {date}, {hours} hours, ${wage}/hr, {gross} gross pay
-        """.format(who=self.who, amount=self.amount, date=self.date, hours=self.hours, wage=self.wage, gross=self.gross)
+        {who}'s check. ${amount}, {date}, {hours} hours, ${wage}/hr, {gross} gross pay. Notes:"{notes}"
+        """.format(who=self.who, amount=self.amount, date=self.date, hours=self.hours, wage=self.wage, gross=self.gross, notes=self.notes)
         return msg
 
