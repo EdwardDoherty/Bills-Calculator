@@ -17,7 +17,3 @@ ElizDefaultCheck = PayCheck(1130, "DEFAULT", EcurrentJob.avgHours,EcurrentJob, "
 joeCheck1 = PayCheck(614.87, date(2022,7,28), 44.50, homeDepot, "First check entered into this program")
 
 
-print(joeCheck1)
-print(joeDefaultCheck)
-print(ElizDefaultCheck)
-
