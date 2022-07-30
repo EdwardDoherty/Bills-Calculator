@@ -9,7 +9,7 @@
 
 class Job():
 
-    def __init__(self, name = "Not Specified", wage = 0, payFreq = 0, avgHours = 0, deductions = 0, isJoes = False, notes = 0):
+    def __init__(self, name = "Not Specified", wage = 0, payFreq = 0, avgHours = 0, isJoes = False, deductions = 0,  notes = ""):
         self.name = name
         self.wage = wage
         self.payFreq = payFreq

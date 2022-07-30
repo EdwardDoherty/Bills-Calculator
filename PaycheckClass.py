@@ -11,25 +11,18 @@
 
 class PayCheck:
 
-    def __init__(self, isJoes, amount, date=None, hours=None, wage=None, gross=None, notes=None):
-        self.isJoes = isJoes
+    def __init__(self, amount, date=None, hours=None, job=None, notes=None):
         self.amount = amount
         self.date = date
         self.hours = hours
-        self.wage = wage
-        self.gross = gross
+        self.job = job
         self.notes = notes
-        
-        if(isJoes):
-            self.who = "Joe"
-        else: 
-            self.who = "Elizabeth"
 
-        #APPEND THE PAYCHECK TO A DICTIONARY, using DATE as the key and the object as the value!!!!
 
     def __repr__(self):
         msg="""
-        {who}'s check. ${amount}, {date}, {hours} hours, ${wage}/hr, {gross} gross pay. Notes:"{notes}"
-        """.format(who=self.who, amount=self.amount, date=self.date, hours=self.hours, wage=self.wage, gross=self.gross, notes=self.notes)
+        {who}'s check. ${amount}, {date}, {hours} hours, {job}. Notes:"{notes}"
+        """.format(who=self.job.who, amount=self.amount, date=self.date, hours=self.hours, job=self.job.name, notes=self.notes)
         return msg
+
 

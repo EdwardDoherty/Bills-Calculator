@@ -3,19 +3,18 @@
 
 from PaycheckClass import *
 from datetime import *
+from jobDatabase import *
 
-joeWage = 17
-joeHours = 40
 
-elizWage = 18.69
-elizHours = 80
 
-joeDefaultCheck = PayCheck(True, 550, "DEFAULT", joeHours, joeWage, joeWage*joeHours, "DEFAULT CHECK")
-ElizDefaultCheck = PayCheck(False, 1130, "DEFAULT", elizHours, elizWage, elizWage*elizHours, "DEFAULT CHECK")
+joeDefaultCheck = PayCheck(550, "DEFAULT", JcurrentJob.avgHours, JcurrentJob, "JOE DEFAULT PAYCHECK")
+ElizDefaultCheck = PayCheck(1130, "DEFAULT", EcurrentJob.avgHours,EcurrentJob, "ELIZABETH DEFAULT CHECK")
+
 
 # RECORD BILLS HERE
 # ALWAYS REMEMBER TO RECORD DATE AS SHOWN BELOW, YEAR, MONTH, DATE
-joeCheck1 = PayCheck(True, 614.87, date(2022,7,28), 12+31.50+1, 17, 756.50, "First check entered into this program")
+# PayCheck(amount, date=None, hours=None, job=None, notes=None)
+joeCheck1 = PayCheck(614.87, date(2022,7,28), 44.50, homeDepot, "First check entered into this program")
 
 
 print(joeCheck1)
