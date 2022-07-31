@@ -7,6 +7,10 @@
 # Grace Period in # of days allowed
 # Interest rate, when applicable
 # Notes
+from operator import *
+
+billList = []
+
 
 class Bill:
 
@@ -19,11 +23,22 @@ class Bill:
         self.interestRate = interestRate
         self.notes = notes
 
-        #APPEND THE BILLS TO A BILL DICTIONARY using the name as the key and the object as the value
-    
+        self.billListAppend()
+
     def __repr__(self) -> str:
         msg = """
         {name} | ${cost}, Due {dueDate}, Type: {billType}, Grace Period: {gracePeriod}, Interest Rate: {interestRate}, Notes: '{notes}'
         """.format(name=self.name, cost=self.cost, dueDate=self.dueDate, billType=self.billType, gracePeriod=self.gracePeriod, interestRate=self.interestRate, notes=self.notes)
         return msg
 
+    # 'key' does nothing but is required to make this function work with itemgetter().
+    # I need to do some research on this function but for now this works fine even though it's ugly
+    def __getitem__(self, key):
+        return self.dueDate
+
+    def getDueDate(self):
+        return self.dueDate
+
+    def billListAppend(self):
+        billList.append(self)
+        billList.sort(key=itemgetter(self.dueDate))

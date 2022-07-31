@@ -18,6 +18,7 @@ class Job():
         self.notes = notes
 
         self.avgCheckCalc()
+        
         if isJoes:
             self.who = "Joe"
         else:
@@ -31,3 +32,5 @@ class Job():
     def avgCheckCalc(self):
         self.gross = self.wage * self.avgHours 
         self.estiPay = self.gross * 0.8
+
+
