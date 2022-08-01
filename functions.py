@@ -6,6 +6,8 @@ from billDatabase import *
 from jobDatabase import *
 from paycheckDatabase import *
 
+#----------------------------------------------------------
+# 'get' functions
 
 #returns list of bills
 def getBillList():
@@ -24,6 +26,29 @@ def getCurrentJob(isJoes = True):
 
 
 
+#---------------------------------------------------------
+# Prediction functions
+
+def expectedIncome():
+    estimatedIncome = 0
+    estimatedIncome += joeDefaultCheck.amount * 2
+    estimatedIncome += ElizDefaultCheck.amount *2
+        
+    return estimatedIncome
+
+def expectedCost():
+    estimatedCost = 0
+    for bill in billList:
+        estimatedCost += bill.cost
+    
+    return estimatedCost
+
+
+
+
+
+
+
 
 
 #----------------------------------------------------------------------------------------------------------------
@@ -32,3 +57,5 @@ print(getBillList())
 print(getPaycheckList())
 print(getCurrentJob(True))
 print(getCurrentJob(False))
+print(expectedIncome())
+print(expectedCost())

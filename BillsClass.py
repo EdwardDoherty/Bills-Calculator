@@ -31,6 +31,11 @@ class Bill:
         """.format(name=self.name, cost=self.cost, dueDate=self.dueDate, billType=self.billType, gracePeriod=self.gracePeriod, interestRate=self.interestRate, notes=self.notes)
         return msg
 
+    def getCost(self):
+        return self.cost
+
+
+
     # 'key' does nothing but is required to make this function work with itemgetter().
     # I need to do some research on this function but for now this works fine even though it's ugly
     def __getitem__(self, key):
