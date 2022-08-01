@@ -6,6 +6,8 @@ from decimal import *
 
 getcontext().prec = 2
 
+# SOME DATA NEEDS TO BE COMPLETED, SEE NOTES ON EACH BILL
+# interest rate unknown means we need to do some research to see what the interest rate is on this particular card.
 # rent = Bill(name, cost, dueDate, billType, gracePeriod, interestRate, notes)
 rent = Bill("Rent", 1250, 1, "Rent", 7, 0, "Due date is flexible")
 
