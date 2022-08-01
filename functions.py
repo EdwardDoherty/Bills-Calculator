@@ -1,10 +1,12 @@
 # print the bills due this week
 # print the bills due the next 4 weeks
 
-from telnetlib import EC
+from decimal import *
 from billDatabase import *
 from jobDatabase import *
 from paycheckDatabase import *
+
+
 
 #----------------------------------------------------------
 # 'get' functions
@@ -12,6 +14,13 @@ from paycheckDatabase import *
 #returns list of bills
 def getBillList():
     return billList
+
+def getBillListShort():
+    # returns tuples of each bill, [name, cost, dueDate]
+    billListShort =  []
+    for bill in billList:
+        billListShort.append(bill.shortMsg())
+    return billListShort
 
 #returns list of paychecks
 def getPaycheckList():
@@ -43,8 +52,12 @@ def expectedCost():
     
     return estimatedCost
 
+def expectedProfit():
+    income = expectedIncome()
+    expenses = expectedCost()
+    profit = round(income - expenses)
 
-
+    return profit
 
 
 
@@ -54,8 +67,10 @@ def expectedCost():
 #----------------------------------------------------------------------------------------------------------------
 # Tester section, to make sure these functions work!
 print(getBillList())
+print(getBillListShort())
 print(getPaycheckList())
 print(getCurrentJob(True))
 print(getCurrentJob(False))
 print(expectedIncome())
 print(expectedCost())
+print(expectedProfit())

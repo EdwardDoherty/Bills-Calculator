@@ -31,6 +31,14 @@ class Bill:
         """.format(name=self.name, cost=self.cost, dueDate=self.dueDate, billType=self.billType, gracePeriod=self.gracePeriod, interestRate=self.interestRate, notes=self.notes)
         return msg
 
+    def shortMsg(self) -> str:
+        shortMsg = []
+        shortMsg.append(self.name)
+        shortMsg.append(self.cost)
+        shortMsg.append(self.dueDate)
+        return shortMsg
+
+
     def getCost(self):
         return self.cost
 
