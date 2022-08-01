@@ -7,13 +7,13 @@ from jobDatabase import *
 
 
 
-joeDefaultCheck = PayCheck(550, "DEFAULT", JcurrentJob.avgHours, JcurrentJob, "JOE DEFAULT PAYCHECK")
-ElizDefaultCheck = PayCheck(1130, "DEFAULT", EcurrentJob.avgHours,EcurrentJob, "ELIZABETH DEFAULT CHECK")
+joeDefaultCheck = PayCheck(550, date(2022, 7, 14), JcurrentJob.avgHours, JcurrentJob, "JOE DEFAULT PAYCHECK")
+ElizDefaultCheck = PayCheck(1130, date(2022, 7, 21), EcurrentJob.avgHours,EcurrentJob, "ELIZABETH DEFAULT CHECK")
 
 
 # RECORD BILLS HERE
 # ALWAYS REMEMBER TO RECORD DATE AS SHOWN BELOW, YEAR, MONTH, DATE
-# PayCheck(amount, date=None, hours=None, job=None, notes=None)
+# PayCheck(amount, date, hours, job, notes)
 joeCheck1 = PayCheck(614.87, date(2022,7,28), 44.50, homeDepot, "First check entered into this program")
 
 

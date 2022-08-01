@@ -28,6 +28,8 @@ class Job():
         msg = """
         {name} | ${wage}/hr, Pay Frequency: {payFreq}, Average hours per pay period: {avgHours}, Deduction amount: {deductions}, Notes: {notes}
         """.format(name=self.name, wage=self.wage, payFreq=self.payFreq, avgHours=self.avgHours, deductions=self.deductions, notes=self.notes)
+        
+        return msg
 
     def avgCheckCalc(self):
         self.gross = self.wage * self.avgHours 

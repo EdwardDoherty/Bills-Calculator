@@ -7,6 +7,10 @@
 # Your hourly wage at this time
 # Gross pay, before taxes and deductions
 
+from operator import *
+
+
+paycheckList = []
 
 
 class PayCheck:
@@ -18,11 +22,20 @@ class PayCheck:
         self.job = job
         self.notes = notes
 
+        self.paycheckListAppend()
 
     def __repr__(self):
         msg="""
         {who}'s check. ${amount}, {date}, {hours} hours, {job}. Notes:"{notes}"
         """.format(who=self.job.who, amount=self.amount, date=self.date, hours=self.hours, job=self.job.name, notes=self.notes)
         return msg
+
+    def __getitem__(self, key):
+        return self.date
+
+
+    def paycheckListAppend(self):
+        paycheckList.append(self)
+        paycheckList.sort(key=itemgetter(self.date))
 
 
