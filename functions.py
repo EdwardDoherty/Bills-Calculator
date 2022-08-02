@@ -5,7 +5,12 @@ from decimal import *
 from billDatabase import *
 from jobDatabase import *
 from paycheckDatabase import *
+from datetime import *
 
+today = date.today()
+thisMonth = date.today().month
+thisYear = date.today().year
+thisDay = date.today().day
 
 
 #----------------------------------------------------------
@@ -59,18 +64,52 @@ def expectedProfit():
 
     return profit
 
+#----------------------------------------------------------
+# Date range functions
+
+def dateifier(dateify, month = date.today().month, year = date.today().year,):
+    dateified = date(year, month, dateify)
+    return dateified
+
+#calculates range from today
+#use range in days
+def dateRangeCalc(range, begindate = today):
+    rangeEnd = begindate + timedelta(days=range)
+    return rangeEnd
+
+def billsDueCalc(range, begindate = today):
+    rangeEnd = dateRangeCalc(range, begindate)
+    billsDue = []
+
+    for bill in billList:
+        dueDateThisMonth = dateifier(bill.dueDate, begindate.month, begindate.year)
+        dueDateNextMonth = dateifier(bill.dueDate, rangeEnd.month, rangeEnd.year)
+        if dueDateThisMonth >= begindate and dueDateThisMonth <= rangeEnd:
+            billsDue.append(bill)
+        elif dueDateNextMonth >= begindate and dueDateNextMonth <= rangeEnd:
+            billsDue.append(bill)
+    
+    return billsDue
+        
 
 
+def billsDue():
+    pass
 
 
 
 #----------------------------------------------------------------------------------------------------------------
 # Tester section, to make sure these functions work!
-print(getBillList())
-print(getBillListShort())
-print(getPaycheckList())
-print(getCurrentJob(True))
-print(getCurrentJob(False))
-print(expectedIncome())
-print(expectedCost())
-print(expectedProfit())
+# print(getBillList())
+# print(getBillListShort())
+# print(getPaycheckList())
+# print(getCurrentJob(True))
+# print(getCurrentJob(False))
+# print(expectedIncome())
+# print(expectedCost())
+# print(expectedProfit())
+#print(dateifier(12))
+#print(dateRangeCalc(14))
+#print(billsDueCalc(14))
+#print(dateRangeCalc(16, date(2022, 8, 28)))
+print(billsDueCalc(7, date(2022, 8, 28)))
