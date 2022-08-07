@@ -11,3 +11,7 @@ paycheckDatabase.py will keep track of previous Paycheck()s and expected future 
     COMPLETE
 
 cashFlowBalancer.py will contain a single function that balances cash flow based on due dates and projected income for a given time frame~
+
+
+
+TESTING GITHUB
