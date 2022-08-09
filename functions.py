@@ -68,7 +68,18 @@ def expectedProfit():
 # Date range functions
 
 def dateifier(dateify, month = date.today().month, year = date.today().year,):
-    dateified = date(year, month, dateify)
+
+    try:
+        dateified = date(year, month, dateify)
+    except: 
+        if month == 2:
+            dateify = 28
+        else :
+            dateify = 30
+        
+        dateified = date(year, month, dateify)
+
+
     return dateified
 
 #calculates range from today
@@ -112,4 +123,4 @@ def billsDue():
 #print(dateRangeCalc(14))
 #print(billsDueCalc(14))
 #print(dateRangeCalc(16, date(2022, 8, 28)))
-print(billsDueCalc(7, date(2022, 8, 28)))
+print(billsDueCalc(7, dateifier(2022, 2, 31)))
